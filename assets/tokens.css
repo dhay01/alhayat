@@ -1,0 +1,117 @@
+/* ============================================================
+   Hayat Travel · shared design tokens for all website templates.
+   Brand values come from the brandbook (hayat-front/app/globals.css).
+   Theme:  <html data-theme="light|dark">   Locale: <html lang dir>
+   ============================================================ */
+
+@font-face {
+  font-family: "beIN";
+  src: url("../fonts/bein-normal.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  /* brand */
+  --sky-50: #f4f1fb; --sky-100: #e8e2f6; --sky-200: #d0c4ec; --sky-300: #ab97d6;
+  --sky-400: #7d5fb9; --sky-500: #553194; --sky-600: #3b1676; --sky-700: #250353;
+  --sky-800: #1b0340; --sky-900: #0f0526;
+  --sunset-100: #ffeae8; --sunset-200: #ffd3cf; --sunset-300: #ffb4ad; --sunset-400: #fb9188; --sunset-500: #ee6c62; --sunset-600: #b8443b;
+  --night: #0f0526; --night-2: #170a35;
+  --champagne: #c9a46a; --champagne-soft: #efe4cf; --champagne-ink: #85652f;
+  --whatsapp: #0e7c3f;
+
+  /* light roles */
+  --bg: #faf8f4;          /* canvas is never pure white */
+  --bg-2: #f3eee5;
+  --surface: #ffffff;     /* cards are white */
+  --surface-2: #f4f1fb;
+  --surface-3: #e8e2f6;
+  --line: rgb(37 3 83 / .1);
+  --line-strong: rgb(37 3 83 / .18);
+  --ink: #0f0526;
+  --ink-2: #3d3654;
+  --ink-3: #5f5874;       /* muted: full strength only, AA on white */
+  --accent: #250353;
+  --accent-press: #1b0340;
+  --on-accent: #ffffff;
+  --accent-ink: #3b1676;
+  --accent-tint: #f4f1fb;
+  --gold: #a8834c;
+  --gold-ink: #85652f;
+  --gold-tint: #f6efe3;
+  --success: #0f7a4a; --success-tint: #e3f4eb;
+  --warning: #9a6200; --warning-tint: #fbefd6;
+  --danger: #b42318; --danger-tint: #fde8e6;
+  --scrim: rgba(15, 5, 38, .5);
+  --shadow-1: 0 1px 2px rgb(37 3 83 / .06);
+  --shadow-2: 0 14px 34px -14px rgb(37 3 83 / .22), 0 2px 6px rgb(37 3 83 / .05);
+  --shadow-3: 0 34px 80px -28px rgb(37 3 83 / .42), 0 6px 16px rgb(37 3 83 / .08);
+
+  --r-sm: 10px; --r-md: 14px; --r-lg: 20px; --r-xl: 28px; --r-2xl: 36px; --r-pill: 999px;
+  --ease: cubic-bezier(.2, 0, 0, 1); --ease-emph: cubic-bezier(.05, .7, .1, 1);
+
+  --font-display: "beIN", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-num: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --lh-body: 1.75;
+  color-scheme: light;
+}
+:root:lang(en) { --font-body: "IBM Plex Sans", "IBM Plex Sans Arabic", system-ui, sans-serif; --lh-body: 1.6; }
+
+:root[data-theme="dark"] {
+  --bg: #0f0526; --bg-2: #140832;
+  --surface: #1a0d3b; --surface-2: #221248; --surface-3: #2c1857;
+  --line: rgb(255 255 255 / .09); --line-strong: rgb(255 255 255 / .16);
+  --ink: #f6f2ff; --ink-2: #cfc6e6; --ink-3: #a99ec8;
+  --accent: #ffb4ad; --accent-press: #fb9188; --on-accent: #0f0526;
+  --accent-ink: #d0c4ec; --accent-tint: #2c1857;
+  --gold: #d7b47a; --gold-ink: #e3c48f; --gold-tint: #2e2318;
+  --success: #5ccf95; --success-tint: #0f3527;
+  --warning: #f2c45a; --warning-tint: #362a10;
+  --danger: #ff8a7a; --danger-tint: #3d1a17;
+  --shadow-1: 0 1px 2px rgb(0 0 0 / .35);
+  --shadow-2: 0 14px 34px -14px rgb(0 0 0 / .6);
+  --shadow-3: 0 34px 80px -28px rgb(0 0 0 / .75);
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: var(--lh-body); -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+button, input, select { font: inherit; color: inherit; }
+a { color: inherit; }
+h1, h2, h3, h4 { margin: 0; line-height: 1.25; }
+p { margin: 0; }
+/* beIN: single weight, never bold, no Arabic diacritics. */
+.font-display, .display { font-family: var(--font-display); font-weight: 400; font-synthesis: none; }
+/* Arabic is a connected script: never track or uppercase it. */
+:lang(ar) * { letter-spacing: 0 !important; text-transform: none !important; }
+/* Prices, times, codes: LTR isolate with Western digits. */
+.figure { direction: ltr; unicode-bidi: isolate; font-variant-numeric: tabular-nums; }
+.ic { flex: none; display: inline-block; vertical-align: middle; }
+[dir="rtl"] .ic-dir { transform: scaleX(-1); }
+:focus-visible { outline: 2px solid var(--sunset-400); outline-offset: 3px; border-radius: 6px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
+
+/* Logo: drawn in currentColor; the Latin wordmark is never mirrored. */
+.hy-logo { display: inline-flex; color: var(--accent); }
+.hy-logo svg { height: 34px; width: auto; }
+[data-theme="dark"] .hy-logo { color: #fff; }
+
+/* App Store / Google Play badges (official artwork, assets/stores/). */
+.hy-stores { display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.hy-store { display: inline-flex; border-radius: 9px; transition: filter .25s, box-shadow .25s; }
+.hy-store img { display: block; height: 44px; width: auto; }
+.hy-store:hover { filter: brightness(1.15); box-shadow: 0 0 0 3px rgb(255 180 173 / .35); }
+.hy-stores-soon { font-size: 12.5px; font-weight: 600; opacity: .75; }
+
+/* Social links: brand-coloured round buttons (assets/hayat.js → HY.socialLinks). */
+.hy-social { display: inline-flex; flex-wrap: wrap; gap: 8px; }
+.hy-soc { width: 40px; height: 40px; display: inline-grid; place-items: center; border-radius: 50%; color: #fff; background: var(--soc, #3d3654); transition: filter .2s, box-shadow .2s; }
+.hy-soc:hover { filter: brightness(1.1); box-shadow: 0 0 0 3px rgb(255 255 255 / .18); }
+.hy-soc-whatsapp { --soc: #25d366; } .hy-soc-facebook { --soc: #0866ff; } .hy-soc-telegram { --soc: #26a5e4; } .hy-soc-youtube { --soc: #ff0000; }
+.hy-soc-tiktok { --soc: #000; box-shadow: inset 0 0 0 1px rgb(255 255 255 / .22); } .hy-soc-snapchat { --soc: #fffc00; color: #000; }
+.hy-soc-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%); }

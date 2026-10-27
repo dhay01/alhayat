@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>حياة للسفر والسياحة · كل خدمات السفر في مكان واحد</title>
+<meta name="description" content="طيران، فنادق، بكجات، رحلات تشارتر، eSIM وتأشيرات للمسافرين ووكلاء السفر والشركات في العراق.">
+<script>
+  /* Pre-paint: lang/dir and theme before first paint. ?lang= / ?theme= override storage; an existing data-theme wins over storage. */
+  (function () {
+    var d = document.documentElement, q = new URLSearchParams(location.search);
+    function s(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+    var l = q.get('lang') || s('hayat-lang') || 'ar'; if (l !== 'en') l = 'ar';
+    d.lang = l; d.dir = l === 'ar' ? 'rtl' : 'ltr';
+    var t = q.get('theme') || d.getAttribute('data-theme') || s('hayat-theme') || 'light';
+    d.setAttribute('data-theme', t === 'dark' ? 'dark' : 'light');
+    d.classList.add('js');
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/forms.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="assets/motion.css">
+<link rel="stylesheet" href="assets/footer.css">
+</head>
+<body>
+<a class="skip" href="#search" data-i18n="skip">انتقل إلى البحث</a>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="top">
+  <div class="wrap nav-row">
+    <a class="hy-logo nav-logo" href="#top" data-logo aria-label="Hayat"></a>
+    <nav class="nav-links" aria-label="Main" data-i18n-attr="aria-label:nav.label">
+      <a href="#services" data-i18n="nav.services">الخدمات</a>
+      <a href="#packages" data-i18n="nav.packages">البكجات</a>
+      <a href="#charter" data-i18n="nav.charter">رحلات تشارتر</a>
+      <a href="#b2b" data-i18n="nav.b2b">الوكلاء</a>
+      <a href="#corporate" data-i18n="nav.corp">الشركات</a>
+      <a href="#contact" data-i18n="nav.contact">تواصل</a>
+    </nav>
+    <div class="nav-tools">
+      <button type="button" class="tool-btn" data-track><span data-ic="ticket" data-size="18"></span><span class="tool-txt" data-i18n="trk.nav">تتبع حجزي</span></button>
+      <button type="button" class="tool-btn" data-login><span data-ic="lock" data-size="18"></span><span class="tool-txt" data-i18n="login.nav">دخول الوكلاء</span></button>
+      <button type="button" class="icon-btn" id="langBtn" aria-label="English" data-i18n-attr="aria-label:lang.switch"><span class="lang-txt" data-i18n="lang.short">EN</span></button>
+      <button type="button" class="icon-btn" id="themeBtn" aria-label="الوضع الداكن" data-i18n-attr="aria-label:theme.switch"><span class="theme-ic"></span></button>
+      <button type="button" class="icon-btn menu-btn" id="menuBtn" aria-expanded="false" aria-controls="drawer" aria-label="القائمة" data-i18n-attr="aria-label:nav.menu"><span data-ic="menu"></span></button>
+    </div>
+  </div>
+  <div class="drawer" id="drawer" hidden>
+    <div class="wrap drawer-in">
+      <nav class="drawer-links" aria-label="Main" data-i18n-attr="aria-label:nav.label">
+        <a href="#services" data-i18n="nav.services">الخدمات</a>
+        <a href="#packages" data-i18n="nav.packages">البكجات</a>
+        <a href="#charter" data-i18n="nav.charter">رحلات تشارتر</a>
+        <a href="#b2b" data-i18n="nav.b2b">الوكلاء</a>
+        <a href="#corporate" data-i18n="nav.corp">الشركات</a>
+        <a href="#contact" data-i18n="nav.contact">تواصل</a>
+      </nav>
+      <div class="drawer-tools">
+        <button type="button" class="btn btn-ghost" data-track><span data-ic="ticket" data-size="18"></span><span data-i18n="trk.nav">تتبع حجزي</span></button>
+        <button type="button" class="btn btn-ghost" data-login><span data-ic="lock" data-size="18"></span><span data-i18n="login.nav">دخول الوكلاء</span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="heroTitle">
+  <img class="hero-bg" src="media/hero.jpg" alt="" fetchpriority="high">
+  <div class="wrap hero-copy">
+    <p class="eyebrow" data-i18n="hero.eyebrow">حياة للسفر والسياحة · بغداد منذ 2010</p>
+    <h1 class="display hero-title" id="heroTitle" data-i18n="hero.title">كل خدمات السفر في مكان واحد</h1>
+    <p class="hero-sub" data-i18n="hero.sub">طيران وفنادق وبكجات وتأشيرات. ابحث هنا، وأكمل الحجز أونلاين أو على واتساب مع مستشار يعرف اسمك.</p>
+  </div>
+</section>
+
+<!-- ============ SEARCH ============ -->
+<section class="search-sec" id="search" aria-labelledby="searchTitle">
+  <div class="wrap">
+    <div class="search-card">
+      <h2 class="sr-only" id="searchTitle" data-i18n="search.title">ابحث واحجز</h2>
+      <div class="tabs" role="tablist" id="tabs" aria-label="الخدمات" data-i18n-attr="aria-label:search.tabs"></div>
+
+      <!-- flights -->
+      <form class="panel" id="p-flights" role="tabpanel" data-kind="flights" novalidate>
+        <div class="row-top">
+          <label class="trip-pick">
+            <span class="sr-only" data-i18n="f.trip">نوع الرحلة</span>
+            <select id="tripSel">
+              <option value="return" data-i18n="f.return">ذهاب وعودة</option>
+              <option value="oneway" data-i18n="f.oneway">ذهاب فقط</option>
+              <option value="multi" data-i18n="f.multi">وجهات متعددة</option>
+              <option value="open" data-i18n="f.open">عودة مفتوحة</option>
+            </select>
+          </label>
+          <p class="tax-note"><span data-ic="checkR" data-size="16"></span><span data-i18n="f.tax">الأسعار تشمل الضرائب، بدون رسوم حجز</span></p>
+        </div>
+        <div class="srow srow-flights">
+          <div class="hf-pair"><div id="fFrom"></div><button type="button" id="fSwap"></button><div id="fTo"></div></div>
+          <div id="fDates"></div>
+          <div id="fValid" class="open-only"></div>
+          <div id="fPax"></div>
+          <button class="hf-submit" type="submit"><span data-ic="search"></span><span data-i18n="f.search">ابحث</span></button>
+        </div>
+        <div class="multi-legs" id="multiLegs"></div>
+      </form>
+
+      <!-- hotels -->
+      <form class="panel" id="p-hotels" role="tabpanel" data-kind="hotels" hidden novalidate>
+        <div class="srow srow-4"><div id="hCity"></div><div id="hDates"></div><div id="hPax"></div>
+          <button class="hf-submit" type="submit"><span data-ic="search"></span><span data-i18n="f.search">ابحث</span></button></div>
+      </form>
+
+      <!-- packages -->
+      <form class="panel" id="p-packages" role="tabpanel" data-kind="packages" hidden novalidate>
+        <div class="srow srow-4"><div id="kDest"></div><div id="kMonth"></div><div id="kPax"></div>
+          <button class="hf-submit" type="submit"><span data-ic="search"></span><span data-i18n="f.search">ابحث</span></button></div>
+      </form>
+
+      <!-- charter programmes -->
+      <form class="panel" id="p-charter" role="tabpanel" data-kind="charter" hidden novalidate>
+        <div class="srow srow-4"><div id="cFrom"></div><div id="cTo"></div><div id="cMonth"></div>
+          <button class="hf-submit" type="submit"><span data-ic="search"></span><span data-i18n="c.find">اعرض البرامج</span></button></div>
+      </form>
+
+      <!-- eSIM -->
+      <form class="panel" id="p-esim" role="tabpanel" data-kind="esim" hidden novalidate>
+        <div class="srow srow-3"><div id="eRegion"></div><div id="eDays"></div>
+          <button class="hf-submit" type="submit"><span data-ic="search"></span><span data-i18n="e.show">عرض الباقات</span></button></div>
+      </form>
+
+      <!-- visa -->
+      <form class="panel" id="p-visa" role="tabpanel" data-kind="visa" hidden novalidate>
+        <div class="srow srow-3"><div id="vDest"></div><div id="vPurpose"></div>
+          <button class="hf-submit" type="submit"><span data-ic="search"></span><span data-i18n="v.check">اعرض المتطلبات</span></button></div>
+      </form>
+
+      <div class="results" id="results" aria-live="polite" hidden></div>
+    </div>
+  </div>
+</section>
+
+<main class="flow" id="flow">
+
+<!-- ============ SERVICES ============ -->
+<section class="sec" id="services" aria-labelledby="svcTitle">
+  <div class="wrap">
+    <h2 class="display sec-title" id="svcTitle" data-i18n="svc.title">كل ما تحتاجه رحلتك</h2>
+    <div class="svc-grid" id="svcGrid"></div>
+  </div>
+</section>
+
+<!-- ============ MONTH GUIDE ============ -->
+<section class="sec" id="destinations" aria-labelledby="destTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="display sec-title" id="destTitle" data-i18n="dst.title">أين تسافر في…</h2>
+      <div id="monthSeg"></div>
+    </div>
+    <div class="arch-row" id="archRow" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ============ PACKAGES ============ -->
+<section class="sec" id="packages" aria-labelledby="pkgTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="display sec-title" id="pkgTitle" data-i18n="pkg.title">بكجات الموسم</h2>
+      <p class="sec-lede" data-i18n="pkg.lede">طيران وفندق وتنقلات بسعر واحد، ونؤكد حجزك على واتساب خلال دقائق.</p>
+    </div>
+    <div class="pkg-grid" id="pkgGrid"></div>
+  </div>
+</section>
+
+<!-- ============ CHARTER PROGRAMMES ============ -->
+<section class="sec sec-deep" id="charter" aria-labelledby="chTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2 class="display sec-title" id="chTitle" data-i18n="ch.title">مقعدك على رحلة مباشرة هذا الموسم</h2>
+        <p class="sec-lede" data-i18n="ch.lede">رحلات مباشرة موسمية من بغداد وأربيل والبصرة، والأمتعة مشمولة في السعر.</p>
+      </div>
+      <div id="chCitySeg"></div>
+    </div>
+    <div class="prog-grid" id="progGrid" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ============ BUSINESS ============ -->
+<section class="sec" id="business" aria-labelledby="bizTitle">
+  <div class="wrap">
+    <h2 class="display sec-title" id="bizTitle" data-i18n="biz.title">لوكالات السفر والشركات</h2>
+    <div class="biz-grid">
+      <article class="biz" id="b2b" aria-labelledby="b2bTitle">
+        <div class="biz-img"><img src="media/b2b-office.jpg" alt="" loading="lazy"></div>
+        <div class="biz-b">
+          <h3 id="b2bTitle" data-i18n="b2b.title">أسعار الجملة لوكالتك، والبيع باسمك</h3>
+          <ul class="ticks">
+            <li data-i18n="b2b.t1">طيران وفنادق ومقاعد تشارتر بأسعار صافية</li>
+            <li data-i18n="b2b.t2">محفظة ائتمان وكشف حساب يومي</li>
+            <li data-i18n="b2b.t3">فواتير وقسائم بشعار وكالتك</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#" data-wa="register"><span data-i18n="b2b.reg">سجّل وكالتك</span></a>
+            <button type="button" class="btn btn-ghost" data-login><span data-i18n="login.nav">دخول الوكلاء</span></button>
+          </div>
+        </div>
+      </article>
+      <article class="biz" id="corporate" aria-labelledby="corpTitle">
+        <div class="biz-img"><img src="media/corporate.jpg" alt="" loading="lazy"></div>
+        <div class="biz-b">
+          <h3 id="corpTitle" data-i18n="co.title">حساب واحد لكل رحلات فريقك</h3>
+          <ul class="ticks">
+            <li data-i18n="co.t1">سياسة سفر تُطبّق تلقائياً</li>
+            <li data-i18n="co.t2">موافقة المدير بنقرة واحدة</li>
+            <li data-i18n="co.t3">فاتورة شهرية واحدة بدل عشرات الإيصالات</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#" data-wa="corp"><span data-i18n="co.cta">افتح حساب شركة</span></a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST ============ -->
+<section class="trust-band" id="why" aria-labelledby="whyTitle">
+  <div class="wrap">
+    <h2 class="sr-only" id="whyTitle" data-i18n="why.title">لماذا حياة</h2>
+    <div class="stats">
+      <div><b class="display figure">120+</b><span data-i18n="st.routes">وجهة من العراق</span></div>
+      <div><b class="display figure">60+</b><span data-i18n="st.suppliers">شركة طيران ومزوّد</span></div>
+      <div><b class="display figure">400K</b><span data-i18n="st.hotels">فندق بأسعار الجملة</span></div>
+      <div><b class="display figure">18</b><span data-i18n="st.gov">محافظة نخدمها</span></div>
+    </div>
+    <ul class="trust">
+      <li><span data-ic="checkR" data-size="18"></span><span data-i18n="why.l">مرخّصة من هيئة السياحة</span></li>
+      <li><span data-ic="checkR" data-size="18"></span><span data-i18n="why.o">مكتب حقيقي في الكرادة، بغداد</span></li>
+      <li><span data-ic="checkR" data-size="18"></span><span data-i18n="why.w">رد على واتساب خلال 5 دقائق</span></li>
+      <li><span data-ic="checkR" data-size="18"></span><span data-i18n="why.p">زين كاش، كي كارد، بطاقة أو نقداً</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec" id="faq" aria-labelledby="faqTitle">
+  <div class="wrap faq-grid">
+    <div>
+      <h2 class="display sec-title" id="faqTitle" data-i18n="faq.title">قبل أن تحجز</h2>
+      <p class="sec-lede" data-i18n="faq.lede">لم تجد جوابك؟ راسلنا ويرد عليك مستشار خلال دقائق.</p>
+      <a class="btn btn-wa" href="#" data-wa="hello"><span data-ic="whatsapp"></span><span data-i18n="faq.ask">اسأل على واتساب</span></a>
+    </div>
+    <div class="faq" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec sec-last" id="contact" aria-labelledby="ctTitle">
+  <div class="wrap">
+    <h2 class="display sec-title" id="ctTitle" data-i18n="ct.title">تواصل مع الدعم</h2>
+    <div class="ct-cards">
+      <a class="ct-card ct-wa" href="#" data-wa="hello">
+        <span data-ic="whatsapp" data-size="24"></span>
+        <b data-i18n="ct.wa">واتساب</b><span class="figure" id="ctWa"></span><small data-i18n="ct.waD">الأسرع: رد خلال 5 دقائق</small>
+      </a>
+      <a class="ct-card" id="ctTel" href="#">
+        <span data-ic="phone" data-size="24"></span>
+        <b data-i18n="ct.phone">اتصال</b><span class="figure" id="ctPhone"></span><small data-i18n="ct.phoneD">السبت إلى الخميس، 9 ص حتى 9 م</small>
+      </a>
+      <div class="ct-card">
+        <span data-ic="map" data-size="24"></span>
+        <b data-i18n="ct.office">المكتب</b><span data-i18n="ct.addr">بغداد، الكرادة، شارع 62</span><small data-i18n="ct.officeD">بدون موعد مسبق</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ DIALOGS ============ -->
+<dialog class="dlg" id="trackDlg" aria-labelledby="trkTitle">
+  <form method="dialog" class="dlg-x"><button class="icon-btn icon-btn-sm" aria-label="إغلاق" data-i18n-attr="aria-label:dlg.close"><span data-ic="close"></span></button></form>
+  <h2 class="display dlg-title" id="trkTitle" data-i18n="trk.title">تتبع حجزك</h2>
+  <p class="muted" data-i18n="trk.lede">أدخل رقم الحجز ورقم الهاتف المسجل عليه.</p>
+  <form class="dlg-form" id="trackForm" novalidate>
+    <label class="hf-field"><span data-ic="ticket"></span><span class="hf-body"><span class="hf-label" data-i18n="trk.ref">رقم الحجز</span><input name="ref" placeholder="HYT-PKG-1042" dir="ltr" autocomplete="off"></span></label>
+    <label class="hf-field"><span data-ic="phone"></span><span class="hf-body"><span class="hf-label" data-i18n="trk.phone">رقم الهاتف</span><input name="phone" type="tel" placeholder="07xx xxx xxxx" dir="ltr" autocomplete="tel"></span></label>
+    <button class="hf-submit" type="submit"><span data-ic="search"></span><span data-i18n="trk.go">تتبع</span></button>
+  </form>
+  <div id="trackOut" aria-live="polite"></div>
+</dialog>
+
+<dialog class="dlg" id="loginDlg" aria-labelledby="loginTitle">
+  <form method="dialog" class="dlg-x"><button class="icon-btn icon-btn-sm" aria-label="إغلاق" data-i18n-attr="aria-label:dlg.close"><span data-ic="close"></span></button></form>
+  <h2 class="display dlg-title" id="loginTitle" data-i18n="login.title">بوابة الوكلاء</h2>
+  <p class="muted" data-i18n="login.lede">ادخل بحساب وكالتك لرؤية الأسعار الصافية ومحفظتك وحجوزاتك.</p>
+  <form class="dlg-form" id="loginForm" novalidate>
+    <label class="hf-field"><span data-ic="user"></span><span class="hf-body"><span class="hf-label" data-i18n="l.email">البريد الإلكتروني للوكالة</span><input type="email" name="email" autocomplete="username" placeholder="agency@example.iq" dir="ltr"></span></label>
+    <label class="hf-field"><span data-ic="lock"></span><span class="hf-body"><span class="hf-label" data-i18n="l.pass">كلمة المرور</span><input type="password" name="password" autocomplete="current-password" dir="ltr"></span></label>
+    <div class="login-foot">
+      <label class="check"><input type="checkbox" name="remember" checked><span data-i18n="l.remember">تذكرني على هذا الجهاز</span></label>
+      <a href="#" class="lnk" data-wa="login" data-i18n="l.forgot">نسيت كلمة المرور؟</a>
+    </div>
+    <button class="hf-submit" type="submit"><span data-i18n="l.go">دخول البوابة</span></button>
+  </form>
+  <div id="loginOut" aria-live="polite"></div>
+  <p class="dlg-foot"><span data-i18n="l.noAcct">لا تملك حساباً؟</span> <a href="#" class="lnk" data-wa="register" data-i18n="l.register">سجّل وكالتك</a></p>
+</dialog>
+
+<noscript><p class="noscript">This page needs JavaScript for search, prices and language switching.</p></noscript>
+
+<script src="assets/icons-data.js"></script>
+<script src="assets/logo-path.js"></script>
+<script src="assets/hayat.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/forms.js"></script>
+<script src="main.js"></script>
+<script src="assets/footer.js"></script>
+<script src="assets/motion.js"></script>
+</body>
+</html>
